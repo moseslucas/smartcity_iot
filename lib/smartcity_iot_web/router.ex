@@ -19,6 +19,14 @@ defmodule SmartcityIotWeb.Router do
     get "/", PageController, :index
   end
 
+  scope "/api", SmartcityIotWeb do
+    pipe_through :api
+
+    resources "/posts", PostController, except: [:new, :edit]
+  end
+
+
+
   # Other scopes may use custom stacks.
   # scope "/api", SmartcityIotWeb do
   #   pipe_through :api
