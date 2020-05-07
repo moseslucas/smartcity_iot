@@ -22,7 +22,6 @@ defmodule SmartcityIotWeb.Router do
   scope "/api", SmartcityIotWeb do
     pipe_through :api
 
-    resources "/posts", PostController, except: [:new, :edit]
     resources "/logs", LogController, except: [:new, :edit, :delete]
   end
 
